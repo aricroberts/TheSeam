@@ -156,11 +156,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
 /* ── /Contact modal ── */
 
 /* ── Seam Paywall ── */
-.seam-turn-counter{display:flex;align-items:center;gap:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--slate);margin-bottom:0.75rem}
-.seam-turn-pips{display:flex;gap:4px}
-.seam-pip{width:8px;height:8px;border-radius:50%;background:var(--amber);opacity:0.25;transition:opacity 0.3s}
-.seam-pip.used{opacity:1}
-.seam-pip.last{background:#f87171}
+.seam-turn-counter{display:inline-flex;align-items:center;gap:0.6rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--slate-light);margin-bottom:0.75rem;background:rgba(244,165,0,0.08);border:1px solid #f4d03f;border-radius:20px;padding:0.35rem 0.85rem;width:fit-content}
+.seam-turn-pips{display:flex;gap:5px;align-items:center}
+.seam-pip{width:9px;height:9px;border-radius:50%;background:var(--amber);opacity:0.2;border:1px solid rgba(244,165,0,0.35);transition:opacity 0.3s,box-shadow 0.3s}
+.seam-pip.used{opacity:1;box-shadow:0 0 5px rgba(244,165,0,0.5)}
+.seam-pip.last{background:#f87171;border-color:rgba(248,113,113,0.5);box-shadow:0 0 5px rgba(248,113,113,0.45)}
 
 #seam-paywall-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:8000;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 #seam-paywall-overlay.open{display:flex}
@@ -204,14 +204,14 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
 
 <nav>
   <div class="nav-inner">
-    <a href="seam-index.html" class="nav-brand">
+    <a href="index.html" class="nav-brand">
       <span class="nav-brand-mark"><svg xmlns="http://www.w3.org/2000/svg" width="148" height="40" viewBox="0 0 148 40" role="img" aria-label="The Seam"><polygon points="0,2 18,2 14,11 4,11" fill="#F4A500" opacity="0.92"/><polygon points="2,14 16,14 11,23 7,23" fill="#9B8BF8" opacity="0.92"/><polygon points="4,26 14,26 9,35" fill="#22D4C8" opacity="0.92"/><text x="22" y="13" font-family="'JetBrains Mono','Courier New',monospace" font-size="10" font-weight="500" fill="#8892b0" letter-spacing="3">THE</text><text x="19" y="37" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="26" fill="#e8e6e1">Seam</text></svg></span>
       <span class="nav-brand-sep">by Aric Civic Labs</span>
     </a>
     <ul class="nav-links">
-      <li><a href="seam-index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="seam.html" class="active">Engine</a></li>
-      <li><a href="https://meshforce.aricciviclabs.org/">MeshForce</a></li>
+      <li><a href="meshforce-index.html">MeshForce</a></li>
     </ul>
     <div class="nav-ecosystem">
       <a href="https://meshforce.aricciviclabs.org/" class="nav-eco-link">MeshForce</a>
@@ -311,12 +311,12 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
 <footer>
   <div class="footer-inner">
     <div>
-      <a href="seam-index.html" class="footer-brand"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="32" viewBox="0 0 148 40" role="img" aria-label="The Seam"><polygon points="0,2 18,2 14,11 4,11" fill="#F4A500" opacity="0.92"/><polygon points="2,14 16,14 11,23 7,23" fill="#9B8BF8" opacity="0.92"/><polygon points="4,26 14,26 9,35" fill="#22D4C8" opacity="0.92"/><text x="22" y="13" font-family="'JetBrains Mono','Courier New',monospace" font-size="10" font-weight="500" fill="#8892b0" letter-spacing="3">THE</text><text x="19" y="37" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="26" fill="#e8e6e1">Seam</text></svg></a>
+      <a href="index.html" class="footer-brand"><svg xmlns="http://www.w3.org/2000/svg" width="110" height="32" viewBox="0 0 148 40" role="img" aria-label="The Seam"><polygon points="0,2 18,2 14,11 4,11" fill="#F4A500" opacity="0.92"/><polygon points="2,14 16,14 11,23 7,23" fill="#9B8BF8" opacity="0.92"/><polygon points="4,26 14,26 9,35" fill="#22D4C8" opacity="0.92"/><text x="22" y="13" font-family="'JetBrains Mono','Courier New',monospace" font-size="10" font-weight="500" fill="#8892b0" letter-spacing="3">THE</text><text x="19" y="37" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="26" fill="#e8e6e1">Seam</text></svg></a>
       <p class="footer-copy">© 2026 The Seam · Part of MeshForce · An Aric Civic Labs Project · aricciviclabs.org/meshforce</p>
     </div>
     <div class="footer-links">
-      <a href="seam-index.html">The Seam Home</a>
-      <a href="https://meshforce.aricciviclabs.org/">MeshForce</a>
+      <a href="index.html">The Seam Home</a>
+      <a href="meshforce-index.html">MeshForce</a>
       <a href="tools.html">Tools</a>
       <a href="#" onclick="openCM();return false;">Contact</a>
     </div>
