@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Seam — WFM Intelligence Engine | Aric Civic Labs</title>
+<meta name="description" content="The Seam is an AI-powered intelligence engine for WFM and ECP professionals. Synthesizes live industry research, best practices, AI agent trends, and workforce planning frameworks into practitioner-ready briefings.">
+<meta name="keywords" content="WFM intelligence, workforce management research, AI agents workforce, enterprise capacity planning, The Seam, WFM briefings, workforce planning AI">
+<meta name="author" content="Aric Civic Labs">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://meshforce.aricciviclabs.org/seam-index">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Seam — WFM Intelligence Engine">
+<meta property="og:description" content="Live AI-powered intelligence for WFM and ECP professionals. Research synthesis, practitioner briefings, and industry intelligence — on demand.">
+<meta property="og:url" content="https://meshforce.aricciviclabs.org/seam-index">
+<meta property="og:site_name" content="Aric Civic Labs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Seam — WFM Intelligence Engine">
+<meta name="twitter:description" content="AI-powered workforce management intelligence for practitioners who need current, synthesized research — not search results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a1628;--navy-mid:#112240;--navy-light:#1d3461;--slate:#8892b0;--slate-light:#a8b2d8;--amber:#f4a500;--amber-dim:#c47f00;--green:#6ee7b7;--teal:#22D4C8;--purple:#9B8BF8;--cream:#f0ede6;--white:#e8e6e1;--rule:rgba(244,165,0,0.25);--card-bg:rgba(17,34,64,0.7);--card-border:rgba(168,178,216,0.12)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 70% 55% at 15% 0%,rgba(244,165,0,0.07) 0%,transparent 55%),radial-gradient(ellipse 55% 50% at 85% 85%,rgba(34,212,200,0.05) 0%,transparent 55%),radial-gradient(ellipse 60% 60% at 80% 20%,rgba(155,139,248,0.04) 0%,transparent 50%);pointer-events:none;z-index:0}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand-sep{font-size:0.7rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);border-left:1px solid rgba(168,178,216,0.2);padding-left:10px;margin-left:4px;font-family:'DM Sans',sans-serif}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--slate-light);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber)}
+.nav-cta{background:var(--amber);color:var(--navy)!important;padding:0.35rem 1rem;border-radius:4px;font-weight:600!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--amber-dim)!important}
+.nav-ecosystem{display:flex;gap:0.5rem;align-items:center}
+.nav-eco-link{color:var(--slate-light);text-decoration:none;font-size:0.8rem;font-weight:500;padding:0.3rem 0.7rem;border:1px solid var(--card-border);border-radius:4px;transition:all 0.2s;white-space:nowrap}
+.nav-eco-link:hover{color:var(--amber);border-color:rgba(244,165,0,0.4)}
+
+/* HERO */
+.hero{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:6rem 2rem 5rem}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--amber);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.75rem;display:flex;align-items:center;gap:0.75rem}
+.eyebrow-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-lockup{display:flex;align-items:center;gap:22px;margin-bottom:2rem}
+.hero-icon-glow{filter:drop-shadow(0 0 28px rgba(244,165,0,0.25)) drop-shadow(0 0 56px rgba(155,139,248,0.12))}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2.75rem,5.5vw,4.5rem);line-height:1.08;letter-spacing:-0.01em}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero-sub{font-size:1.125rem;color:var(--slate-light);line-height:1.75;max-width:600px;margin-bottom:2.75rem;margin-top:1.25rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem}
+.btn-primary{background:var(--amber);color:var(--navy);padding:0.875rem 2.25rem;border-radius:5px;text-decoration:none;font-weight:700;font-size:0.9375rem;transition:background 0.2s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary:hover{background:var(--amber-dim)}
+.btn-ghost{border:1px solid rgba(168,178,216,0.3);color:var(--slate-light);padding:0.875rem 2.25rem;border-radius:5px;text-decoration:none;font-weight:500;font-size:0.9375rem;transition:all 0.2s}
+.btn-ghost:hover{border-color:var(--slate);color:var(--white)}
+.hero-stats{display:flex;gap:3rem;padding-top:2.5rem;border-top:1px solid var(--rule);flex-wrap:wrap}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--amber)}
+.stat-label{font-size:0.8rem;color:var(--slate);margin-top:0.2rem}
+
+/* TRUST BAR */
+.trust-bar{position:relative;z-index:1;background:rgba(17,34,64,0.5);border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);padding:1.25rem 2rem}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:0.6rem;font-size:0.8125rem;color:var(--slate-light)}
+
+/* HOW IT WORKS */
+.how-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:5rem 2rem}
+.section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--amber);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem}
+.section-heading{font-family:'DM Serif Display',serif;font-size:2.25rem;margin-bottom:0.75rem}
+.section-heading em{font-style:italic;color:var(--amber)}
+.section-sub{color:var(--slate-light);font-size:0.9375rem;line-height:1.7;max-width:540px;margin-bottom:3rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+.step{position:relative}
+.step-num{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--amber);letter-spacing:0.1em;margin-bottom:0.85rem;opacity:0.7}
+.step h3{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.5rem}
+.step p{font-size:0.875rem;color:var(--slate);line-height:1.65}
+.step-connector{position:absolute;right:-1.2rem;top:0.6rem;color:var(--amber);opacity:0.3;font-size:1.2rem}
+
+/* FEATURES */
+.features-section{position:relative;z-index:1;background:linear-gradient(135deg,rgba(17,34,64,0.6),rgba(10,22,40,0.9));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 2rem}
+.features-inner{max-width:1200px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.75rem;margin-top:3rem}
+.feature-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:2rem;transition:border-color 0.2s,transform 0.2s}
+.feature-card:hover{border-color:rgba(244,165,0,0.3);transform:translateY(-2px)}
+.feature-icon{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.25rem}
+.feature-icon.amber{background:rgba(244,165,0,0.1);border:1px solid rgba(244,165,0,0.2)}
+.feature-icon.teal{background:rgba(34,212,200,0.08);border:1px solid rgba(34,212,200,0.2)}
+.feature-icon.purple{background:rgba(155,139,248,0.08);border:1px solid rgba(155,139,248,0.2)}
+.feature-icon.green{background:rgba(110,231,183,0.08);border:1px solid rgba(110,231,183,0.2)}
+.feature-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:0.5rem}
+.feature-card p{font-size:0.875rem;color:var(--slate);line-height:1.65}
+
+/* USE CASES */
+.usecases-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:5rem 2rem}
+.usecases-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.usecase-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:1.75rem}
+.usecase-card h3{font-family:'DM Serif Display',serif;font-size:1rem;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.6rem}
+.usecase-card p{font-size:0.875rem;color:var(--slate);line-height:1.65}
+.uc-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--amber);letter-spacing:0.07em;background:rgba(244,165,0,0.1);border:1px solid rgba(244,165,0,0.2);padding:0.15rem 0.5rem;border-radius:3px}
+
+/* DEMO PREVIEW */
+.demo-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 2rem 5rem}
+.demo-frame{background:linear-gradient(135deg,rgba(17,34,64,0.98),rgba(10,22,40,1));border:1px solid rgba(244,165,0,0.25);border-radius:14px;overflow:hidden;box-shadow:0 24px 72px rgba(0,0,0,0.5)}
+.demo-chrome{background:rgba(10,22,40,0.9);border-bottom:1px solid rgba(244,165,0,0.15);padding:0.85rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.demo-dots{display:flex;gap:6px}
+.demo-dot{width:10px;height:10px;border-radius:50%}
+.demo-dot.r{background:rgba(248,113,113,0.5)}
+.demo-dot.y{background:rgba(244,165,0,0.5)}
+.demo-dot.g{background:rgba(110,231,183,0.5)}
+.demo-url{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--slate);background:rgba(17,34,64,0.8);border:1px solid var(--card-border);padding:0.3rem 1rem;border-radius:4px;flex:1;max-width:380px}
+.demo-badge{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--green);background:rgba(110,231,183,0.1);border:1px solid rgba(110,231,183,0.25);padding:0.2rem 0.6rem;border-radius:3px;letter-spacing:0.04em;margin-left:auto}
+.demo-body{padding:2.5rem}
+.demo-query-row{display:flex;gap:0.75rem;margin-bottom:1.5rem}
+.demo-input{flex:1;background:rgba(10,22,40,0.9);border:1px solid rgba(244,165,0,0.4);border-radius:7px;padding:0.85rem 1.1rem;color:var(--white);font-family:'DM Sans',sans-serif;font-size:0.9375rem}
+.demo-search-btn{background:var(--amber);color:var(--navy);border:none;padding:0.85rem 2rem;border-radius:7px;font-weight:700;font-size:0.875rem}
+.demo-results{border:1px solid var(--card-border);border-radius:10px;padding:1.75rem;background:rgba(10,22,40,0.5)}
+.demo-result{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--card-border)}
+.demo-result:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.demo-result-meta{display:flex;gap:0.6rem;align-items:center;margin-bottom:0.4rem;flex-wrap:wrap}
+.demo-source{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--amber);letter-spacing:0.04em}
+.demo-date{font-size:0.72rem;color:var(--slate)}
+.demo-tag{font-size:0.62rem;background:rgba(168,178,216,0.1);color:var(--slate-light);padding:0.12rem 0.4rem;border-radius:3px;border:1px solid var(--card-border)}
+.demo-title{font-weight:600;font-size:0.9rem;margin-bottom:0.35rem;color:var(--white);line-height:1.4}
+.demo-summary{font-size:0.8rem;color:var(--slate-light);line-height:1.6}
+
+/* PRICING */
+.pricing-section{position:relative;z-index:1;background:linear-gradient(135deg,rgba(17,34,64,0.7),rgba(10,22,40,0.95));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 2rem}
+.pricing-inner{max-width:1100px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.pricing-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:2.25rem;display:flex;flex-direction:column}
+.pricing-card.featured{border-color:rgba(244,165,0,0.45);background:rgba(244,165,0,0.04);position:relative}
+.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.07em;text-transform:uppercase;background:var(--amber);color:var(--navy);padding:0.2rem 0.85rem;border-radius:20px;font-weight:700;white-space:nowrap}
+.pricing-tier{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem}
+.pricing-name{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:0.5rem}
+.pricing-price{display:flex;align-items:baseline;gap:0.3rem;margin-bottom:0.5rem}
+.pricing-amount{font-family:'JetBrains Mono',monospace;font-size:2rem;color:var(--amber);font-weight:600}
+.pricing-period{font-size:0.8125rem;color:var(--slate)}
+.pricing-savings{font-size:0.75rem;color:var(--green);margin-bottom:1rem}
+.pricing-desc{font-size:0.875rem;color:var(--slate);line-height:1.6;margin-bottom:1.5rem}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;flex:1}
+.pricing-features li{font-size:0.8125rem;color:var(--slate-light);display:flex;align-items:flex-start;gap:0.5rem;line-height:1.45}
+.pricing-features li::before{content:'→';color:var(--amber);font-size:0.7rem;flex-shrink:0;margin-top:0.15rem}
+.pricing-features li.dim{color:var(--slate);opacity:0.6}
+.pricing-features li.dim::before{color:var(--slate)}
+.pricing-btn{display:block;text-align:center;padding:0.8rem;border-radius:5px;font-weight:600;font-size:0.875rem;text-decoration:none;transition:all 0.2s}
+.pricing-btn-primary{background:var(--amber);color:var(--navy)}
+.pricing-btn-primary:hover{background:var(--amber-dim)}
+.pricing-btn-ghost{border:1px solid rgba(168,178,216,0.25);color:var(--slate-light)}
+.pricing-btn-ghost:hover{border-color:var(--slate);color:var(--white)}
+.pricing-btn-outline{border:1px solid rgba(244,165,0,0.35);color:var(--amber)}
+.pricing-btn-outline:hover{background:rgba(244,165,0,0.07)}
+.pricing-note{text-align:center;margin-top:2rem;font-size:0.8125rem;color:var(--slate)}
+
+/* MESH CONTEXT */
+.context-section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:5rem 2rem}
+.context-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}
+.context-copy h2{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:1rem}
+.context-copy h2 em{font-style:italic;color:var(--amber)}
+.context-copy p{color:var(--slate-light);line-height:1.75;margin-bottom:1.25rem;font-size:0.9375rem}
+.context-links{display:flex;flex-direction:column;gap:0.75rem;margin-top:1.75rem}
+.context-link{display:flex;align-items:center;gap:0.85rem;padding:0.9rem 1.25rem;background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s}
+.context-link:hover{border-color:rgba(244,165,0,0.35);transform:translateX(3px)}
+.context-link-icon{font-size:1.5rem;flex-shrink:0}
+.context-link-label{font-size:0.8rem;color:var(--slate);font-family:'JetBrains Mono',monospace;letter-spacing:0.04em}
+.context-link-name{font-weight:600;font-size:0.9375rem;color:var(--white)}
+.context-link-arr{margin-left:auto;color:var(--amber);opacity:0.6;font-size:0.875rem}
+.context-visual{display:flex;flex-direction:column;gap:1rem}
+.cv-node{background:var(--card-bg);border:1px solid var(--card-border);border-radius:10px;padding:1.5rem;transition:border-color 0.2s}
+.cv-node:hover{border-color:rgba(244,165,0,0.3)}
+.cv-node.active{border-color:rgba(244,165,0,0.4);background:rgba(244,165,0,0.04)}
+.cv-node-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem}
+.cv-node-name{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--white);margin-bottom:0.25rem}
+.cv-node-desc{font-size:0.8rem;color:var(--slate);line-height:1.5}
+
+/* CTA STRIP */
+.cta-strip{position:relative;z-index:1;background:linear-gradient(90deg,rgba(244,165,0,0.08) 0%,rgba(34,212,200,0.04) 100%);border-top:1px solid rgba(244,165,0,0.2);border-bottom:1px solid rgba(244,165,0,0.2);padding:4rem 2rem}
+.cta-strip-inner{max-width:900px;margin:0 auto;text-align:center}
+.cta-strip h2{font-family:'DM Serif Display',serif;font-size:2.5rem;margin-bottom:1rem}
+.cta-strip h2 em{font-style:italic;color:var(--amber)}
+.cta-strip p{color:var(--slate-light);font-size:1rem;line-height:1.7;max-width:560px;margin:0 auto 2.5rem}
+.cta-strip-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5rem 2rem;margin-top:2rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:0.4rem}
+.footer-copy{font-size:0.8rem;color:var(--slate);margin-top:0.4rem}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:var(--slate);text-decoration:none;font-size:0.8125rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+.section-divider{border:none;border-top:1px solid var(--rule);max-width:1200px;margin:0 auto}
+
+/* PRIVACY BAR */
+#rcp-notice{position:sticky;top:0;z-index:9999;background:#0d1c36;border-bottom:1px solid rgba(244,165,0,0.2);padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--slate);line-height:1.4}
+#rcp-notice a{color:var(--amber);text-decoration:none}
+#rcp-notice a:hover{text-decoration:underline}
+#rcp-notice-close{background:none;border:none;color:rgba(244,165,0,0.3);cursor:pointer;font-size:16px;line-height:1;padding:0 0 0 .5rem;flex-shrink:0}
+#rcp-notice-close:hover{color:var(--slate-light)}
+
+/* CONTACT MODAL */
+#contact-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9000;align-items:center;justify-content:center}
+#contact-modal-overlay.open{display:flex}
+#contact-modal{background:#112240;border:1px solid rgba(244,165,0,.3);border-radius:8px;padding:2rem;width:100%;max-width:420px;margin:1rem;position:relative}
+#contact-modal h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;color:#e8e6e1;margin-bottom:1.25rem}
+.cm-row{margin-bottom:1rem}
+.cm-row label{display:block;font-size:.8rem;color:#a8b2d8;margin-bottom:.35rem}
+.cm-row input,.cm-row textarea{width:100%;background:rgba(10,22,40,.8);border:1px solid rgba(168,178,216,.15);border-radius:4px;padding:.6rem .85rem;color:#e8e6e1;font-family:'DM Sans',sans-serif;font-size:.875rem;transition:border-color .2s}
+.cm-row input:focus,.cm-row textarea:focus{outline:none;border-color:rgba(244,165,0,.5)}
+.cm-row textarea{resize:vertical;min-height:90px}
+#cm-submit{background:#f4a500;color:#0a1628;border:none;padding:.65rem 1.75rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .2s;width:100%}
+#cm-submit:hover{background:#c47f00}
+#cm-submit:disabled{opacity:.6;cursor:not-allowed}
+#cm-status{margin-top:.75rem;font-size:.8125rem;text-align:center;min-height:1.2em}
+#cm-close{position:absolute;top:.75rem;right:.9rem;background:none;border:none;color:#8892b0;font-size:1.25rem;cursor:pointer;line-height:1}
+#cm-close:hover{color:#e8e6e1}
+
+@media(max-width:1024px){.pricing-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-ecosystem{display:none}.hero-lockup{flex-direction:column;align-items:flex-start;gap:12px}.pricing-grid{grid-template-columns:1fr}.usecases-grid{grid-template-columns:1fr}.context-grid{grid-template-columns:1fr}.hero-stats{gap:2rem}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- Privacy bar -->
+<div id="rcp-notice">
+  <span>By using this tool you agree to our <a href="legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are AI-synthesized summaries — not professional advice.</span>
+  <button id="rcp-notice-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('rcpNotice','1')}catch(e){}">&#x2715;</button>
+</div>
+<script>try{if(sessionStorage.getItem('rcpNotice')==='1'){var n=document.getElementById('rcp-notice');if(n)n.style.display='none';}}catch(e){}</script>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="seam-index.html" class="nav-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="148" height="40" viewBox="0 0 148 40" role="img" aria-label="The Seam">
+        <polygon points="0,2 18,2 14,11 4,11" fill="#F4A500" opacity="0.92"/>
+        <polygon points="2,14 16,14 11,23 7,23" fill="#9B8BF8" opacity="0.92"/>
+        <polygon points="4,26 14,26 9,35" fill="#22D4C8" opacity="0.92"/>
+        <text x="22" y="13" font-family="'JetBrains Mono','Courier New',monospace" font-size="10" font-weight="500" fill="#8892b0" letter-spacing="3">THE</text>
+        <text x="19" y="37" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="26" fill="#e8e6e1">Seam</text>
+      </svg>
+      <span class="nav-brand-sep">by Aric Civic Labs</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="seam-index.html" class="active">Home</a></li>
+      <li><a href="seam.html" class="nav-cta">Open Engine →</a></li>
+      <li><a href="meshforce-index.html">MeshForce</a></li>
+    </ul>
+    <div class="nav-ecosystem">
+      <a href="https://meshforce.aricciviclabs.org/" class="nav-eco-link">MeshForce</a>
+      <a href="https://receipts.aricciviclabs.org/" class="nav-eco-link">receipts.</a>
+      <a href="https://transitions.aricciviclabs.org/" class="nav-eco-link">Transitions</a>
+      <a href="https://www.aricciviclabs.org/" class="nav-eco-link">Aric Civic Labs</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-dot"></span>
+    AI-Powered Intelligence Engine &middot; Live
+  </div>
+  <div class="hero-lockup">
+    <span class="hero-icon-glow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 72 72" role="img" aria-label="The Seam icon">
+        <rect width="72" height="72" rx="15" fill="#0a1628"/>
+        <polygon points="8,8 64,8 56,24 16,24" fill="#F4A500" opacity="0.92"/>
+        <polygon points="14,28 58,28 48,44 24,44" fill="#9B8BF8" opacity="0.92"/>
+        <polygon points="20,48 52,48 36,64" fill="#22D4C8" opacity="0.92"/>
+      </svg>
+    </span>
+    <h1>The <em>Seam</em></h1>
+  </div>
+  <p class="hero-sub">WFM and ECP intelligence — synthesized, not searched. Ask any workforce management question and get structured findings from live industry literature, research, and practitioner-grade analysis.</p>
+  <div class="hero-ctas">
+    <a href="seam.html" class="btn-primary">Open the Intelligence Engine &rarr;</a>
+    <a href="#pricing" class="btn-ghost">View Pricing</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">Live</div><div class="stat-label">Industry crawling</div></div>
+    <div><div class="stat-num">3</div><div class="stat-label">Free searches / session</div></div>
+    <div><div class="stat-num">PDF</div><div class="stat-label">Briefing exports</div></div>
+    <div><div class="stat-num">Unlim.</div><div class="stat-label">Searches &middot; Practitioner</div></div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span>🔒</span> No data stored or logged</div>
+    <div class="trust-item"><span>⚡</span> Powered by Claude AI</div>
+    <div class="trust-item"><span>📄</span> Source-attributed results</div>
+    <div class="trust-item"><span>🎯</span> WFM &amp; ECP specialist context</div>
+    <div class="trust-item"><span>📊</span> PDF briefing export</div>
+  </div>
+</div>
+
+<hr class="section-divider" style="margin-top:0">
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-eyebrow">How it works</div>
+  <h2 class="section-heading">Ask. <em>Synthesize.</em> Act.</h2>
+  <p class="section-sub">The Seam isn't a chatbot — it's an intelligence workflow. Every query runs through a structured synthesis pipeline built for practitioners.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01 &mdash; QUERY</div>
+      <h3>Ask a real practitioner question</h3>
+      <p>Type any WFM or ECP topic — forecasting methodology, AI agent deployment, vendor comparisons, Erlang modeling, shrinkage benchmarks, or emerging best practices.</p>
+      <span class="step-connector">&rarr;</span>
+    </div>
+    <div class="step">
+      <div class="step-num">02 &mdash; CRAWL</div>
+      <h3>Live search activates</h3>
+      <p>The Seam searches current industry publications, vendor research, academic sources, and practitioner forums in real time. Not cached — fresh results on every search.</p>
+      <span class="step-connector">&rarr;</span>
+    </div>
+    <div class="step">
+      <div class="step-num">03 &mdash; SYNTHESIZE</div>
+      <h3>AI distills the signal</h3>
+      <p>Results are synthesized into 3–5 structured findings with source attribution, relevance context, and actionable insights — not a wall of raw links.</p>
+      <span class="step-connector">&rarr;</span>
+    </div>
+    <div class="step">
+      <div class="step-num">04 &mdash; EXPORT</div>
+      <h3>Briefing PDF ready to share</h3>
+      <p>Practitioner subscribers can export any Seam session as a formatted PDF briefing — ready for vendor meetings, team updates, or business cases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="features-inner">
+    <div class="section-eyebrow">Built for practitioners</div>
+    <h2 class="section-heading">Intelligence that fits how <em>WFM teams</em> work</h2>
+    <p class="section-sub">The Seam is purpose-built for workforce management and enterprise capacity planning — not a general-purpose AI search tool.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon amber">🔍</div>
+        <h3>Live industry research</h3>
+        <p>Searches WFM publications, vendor blogs, academic research, and professional forums in real time — surfaces what matters today, not a cached snapshot from months ago.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon teal">🧠</div>
+        <h3>Structured synthesis</h3>
+        <p>Results are structured into labelled findings with source attribution. You get practitioner-relevant summaries, not raw search results you have to interpret yourself.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon purple">📎</div>
+        <h3>Source attribution</h3>
+        <p>Every finding includes publisher source and date context. Links go to verified publisher homepages — no fabricated article URLs or phantom citations.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green">📄</div>
+        <h3>PDF briefing export</h3>
+        <p>Export any session as a formatted briefing PDF. Structured for sharing with management, vendors, or teams — no copy-paste reformatting required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon amber">🎯</div>
+        <h3>WFM specialist context</h3>
+        <p>Deep background in WFM and ECP topics — Erlang modeling, capacity planning frameworks, AI agent deployment, scheduling optimization, shrinkage benchmarks, and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon teal">⚡</div>
+        <h3>Fallback intelligence</h3>
+        <p>When live search isn't available, The Seam draws on deep training knowledge of WFM industry research, vendor landscape, and best practices — no empty results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- USE CASES -->
+<section class="usecases-section">
+  <div class="section-eyebrow">Use cases</div>
+  <h2 class="section-heading">What practitioners <em>search for</em></h2>
+  <p class="section-sub">The Seam is built for practitioners who need structured intelligence to make decisions, build cases, and stay current.</p>
+  <div class="usecases-grid">
+    <div class="usecase-card">
+      <h3><span>📋</span> Vendor evaluation <span class="uc-tag">PRE-CALL PREP</span></h3>
+      <p>Research a WFM platform before an evaluation call. Get current analyst commentary, user sentiment, known capabilities, and competitive positioning — in under a minute.</p>
+    </div>
+    <div class="usecase-card">
+      <h3><span>📈</span> Business case development <span class="uc-tag">INTERNAL</span></h3>
+      <p>Building a case for WFM investment? Find supporting research, industry benchmarks, ROI frameworks, and peer examples to strengthen your proposal.</p>
+    </div>
+    <div class="usecase-card">
+      <h3><span>🤖</span> AI agent readiness research <span class="uc-tag">EMERGING TOPICS</span></h3>
+      <p>Stay current on AI agent deployment in workforce operations. The Seam tracks implementation patterns, vendor announcements, and practitioner case studies as they emerge.</p>
+    </div>
+    <div class="usecase-card">
+      <h3><span>📐</span> Methodology benchmarking <span class="uc-tag">STANDARDS</span></h3>
+      <p>Validate your Erlang modeling assumptions, shrinkage calculation approach, or forecasting methodology against current industry best practice and academic research.</p>
+    </div>
+    <div class="usecase-card">
+      <h3><span>🗞️</span> Industry trend monitoring <span class="uc-tag">AWARENESS</span></h3>
+      <p>Stay ahead of the curve without reading 20 newsletters. Ask about the latest developments in workforce optimization, AI agent integration, or ECP software — get a synthesized briefing.</p>
+    </div>
+    <div class="usecase-card">
+      <h3><span>🎓</span> Team knowledge building <span class="uc-tag">ENABLEMENT</span></h3>
+      <p>Quickly research topics for team presentations, onboarding materials, or training sessions. Export as a formatted PDF briefing ready to share with the group.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO PREVIEW -->
+<section class="demo-section">
+  <div class="section-eyebrow" style="text-align:center;margin-bottom:1.25rem">Live preview</div>
+  <h2 class="section-heading" style="text-align:center;margin-bottom:0.5rem">See <em>The Seam</em> in action</h2>
+  <p style="color:var(--slate-light);text-align:center;font-size:0.9375rem;margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto">This is a static preview of a real Seam result. The live engine produces structured findings like these for any WFM topic.</p>
+  <div class="demo-frame">
+    <div class="demo-chrome">
+      <div class="demo-dots"><div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div></div>
+      <div class="demo-url">meshforce.aricciviclabs.org/seam</div>
+      <div class="demo-badge">LIVE ENGINE</div>
+    </div>
+    <div class="demo-body">
+      <div class="demo-query-row">
+        <div class="demo-input">What are the leading AI agent use cases in WFM for 2025?</div>
+        <div class="demo-search-btn">Search &rarr;</div>
+      </div>
+      <div class="demo-results">
+        <div class="demo-result">
+          <div class="demo-result-meta">
+            <span class="demo-source">Gartner</span>
+            <span class="demo-date">2025</span>
+            <span class="demo-tag">AI Automation</span>
+            <span class="demo-tag">Research</span>
+          </div>
+          <div class="demo-title">Autonomous scheduling assistants emerge as top deployment priority</div>
+          <div class="demo-summary">AI agents are being deployed as scheduling copilots — handling exception management, real-time adherence alerts, and intraday reforecasting with human oversight at decision gates rather than execution steps.</div>
+        </div>
+        <div class="demo-result">
+          <div class="demo-result-meta">
+            <span class="demo-source">ICMI</span>
+            <span class="demo-date">2025</span>
+            <span class="demo-tag">Workforce Ops</span>
+          </div>
+          <div class="demo-title">Conversational AI handling first-tier agent support queries at scale</div>
+          <div class="demo-summary">WFM platforms are integrating conversational AI to handle common agent inquiries — shift swap requests, schedule visibility, and adherence coaching — reducing WFM team workload by an estimated 25–40% in early deployments.</div>
+        </div>
+        <div class="demo-result">
+          <div class="demo-result-meta">
+            <span class="demo-source">Verint / NICE Research</span>
+            <span class="demo-date">2025</span>
+            <span class="demo-tag">Vendor Intelligence</span>
+          </div>
+          <div class="demo-title">Hybrid AI-Erlang forecasting models outperform pure ML in high-variance environments</div>
+          <div class="demo-summary">Hybrid forecasting models combining classical Erlang mathematics with ML pattern recognition are outperforming pure ML approaches in contact center environments with high seasonality variance — improving accuracy by 15–30%.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a href="seam.html" class="btn-primary" style="display:inline-flex">Run a real search in The Seam &rarr;</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-heading">Start free. <em>Upgrade</em> when you need more.</h2>
+    <p class="section-sub">3 free searches per session to evaluate The Seam. Practitioner access unlocks unlimited searches and PDF briefing exports.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Free Access</div>
+        <div class="pricing-name">Explorer</div>
+        <div class="pricing-price"><span class="pricing-amount">$0</span><span class="pricing-period">/ session</span></div>
+        <div class="pricing-desc">Try The Seam with 3 searches per browser session. No sign-up required.</div>
+        <ul class="pricing-features">
+          <li>3 searches per session</li>
+          <li>Structured synthesis results</li>
+          <li>Source attribution</li>
+          <li class="dim">PDF briefing export — locked</li>
+          <li class="dim">Unlimited searches — locked</li>
+        </ul>
+        <a href="seam.html" class="pricing-btn pricing-btn-ghost">Start searching &rarr;</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">MOST POPULAR</div>
+        <div class="pricing-tier">Practitioner</div>
+        <div class="pricing-name">Monthly</div>
+        <div class="pricing-price"><span class="pricing-amount">$29</span><span class="pricing-period">/ month</span></div>
+        <div class="pricing-desc">Unlimited searches this session + PDF briefing exports. Cancel anytime.</div>
+        <ul class="pricing-features">
+          <li>Unlimited searches (session)</li>
+          <li>Structured synthesis results</li>
+          <li>Source attribution</li>
+          <li>PDF briefing export</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="https://buy.stripe.com/14AfZi9Meg1Y7PV5JV7N60w" class="pricing-btn pricing-btn-primary">Subscribe Monthly &rarr;</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Practitioner</div>
+        <div class="pricing-name">Annual</div>
+        <div class="pricing-price"><span class="pricing-amount">$325</span><span class="pricing-period">/ year</span></div>
+        <div class="pricing-savings">Save $23 vs. monthly</div>
+        <div class="pricing-desc">Everything in Monthly. Best value for regular practitioners.</div>
+        <ul class="pricing-features">
+          <li>Unlimited searches (session)</li>
+          <li>Structured synthesis results</li>
+          <li>Source attribution</li>
+          <li>PDF briefing export</li>
+          <li>Priority feature access</li>
+        </ul>
+        <a href="https://buy.stripe.com/14AdRa0bE5nk0nt4FR7N60x" class="pricing-btn pricing-btn-outline">Subscribe Annual &rarr;</a>
+      </div>
+    </div>
+    <p class="pricing-note">Enterprise team access and sponsored placement available — <a href="#" onclick="openCM();return false;" style="color:var(--amber)">contact us</a>. All purchases unlock the current session only. No account required.</p>
+  </div>
+</section>
+
+<!-- CONTEXT: PART OF MESHFORCE -->
+<section class="context-section">
+  <div class="context-grid">
+    <div class="context-copy">
+      <div class="section-eyebrow">Part of MeshForce</div>
+      <h2>The Seam is one layer of a <em>complete</em> WFM stack</h2>
+      <p>The Seam lives inside MeshForce — Aric Civic Labs' full platform for WFM and ECP professionals. Alongside the intelligence engine you get practical calculators, staffing tools, and a curated directory of 120+ platforms.</p>
+      <p>Use The Seam for intelligence. Use MeshForce Tools for day-to-day calculations. Use the Directory for vendor research. All three are interconnected — and all free to explore.</p>
+      <div class="context-links">
+        <a href="meshforce-index.html" class="context-link">
+          <span class="context-link-icon">⚙️</span>
+          <div>
+            <div class="context-link-label">Home Base</div>
+            <div class="context-link-name">MeshForce — WFM Resource Registry</div>
+          </div>
+          <span class="context-link-arr">&rarr;</span>
+        </a>
+        <a href="tools.html" class="context-link">
+          <span class="context-link-icon">🔧</span>
+          <div>
+            <div class="context-link-label">13 Tools &middot; 6 Categories</div>
+            <div class="context-link-name">Erlang Calculators, Shrinkage, FTE &amp; More</div>
+          </div>
+          <span class="context-link-arr">&rarr;</span>
+        </a>
+        <a href="seam-directory.html" class="context-link">
+          <span class="context-link-icon">🗂️</span>
+          <div>
+            <div class="context-link-label">120+ Platforms</div>
+            <div class="context-link-name">WFM / ECP Vendor Directory</div>
+          </div>
+          <span class="context-link-arr">&rarr;</span>
+        </a>
+      </div>
+    </div>
+    <div class="context-visual">
+      <div class="cv-node active">
+        <div class="cv-node-label">You are here &middot; Intelligence</div>
+        <div class="cv-node-name">The Seam</div>
+        <div class="cv-node-desc">AI-powered research synthesis. Live industry crawling. PDF briefing export. Practitioner-structured results.</div>
+      </div>
+      <div class="cv-node">
+        <div class="cv-node-label">Tools &middot; Calculators</div>
+        <div class="cv-node-name">MeshForce Tools</div>
+        <div class="cv-node-desc">Erlang C/B, Erlang X, FTE &amp; headcount, shrinkage, SLA simulation, forecasting, AI agent builder starter, and KPI dashboard. Free.</div>
+      </div>
+      <div class="cv-node">
+        <div class="cv-node-label">Directory &middot; 120+ Platforms</div>
+        <div class="cv-node-name">WFM/ECP Directory</div>
+        <div class="cv-node-desc">Curated listings across AI agents, WFM platforms, ECP software, research sources, professional associations, and training resources.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2>Start your first <em>search</em></h2>
+    <p>3 free searches, no sign-up. Ask about any WFM or ECP topic and get structured intelligence in seconds.</p>
+    <div class="cta-strip-btns">
+      <a href="seam.html" class="btn-primary">Open The Seam &rarr;</a>
+      <a href="meshforce-index.html" class="btn-ghost">Explore all of MeshForce</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seam-index.html" class="footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="110" height="32" viewBox="0 0 148 40" role="img" aria-label="The Seam">
+          <polygon points="0,2 18,2 14,11 4,11" fill="#F4A500" opacity="0.92"/>
+          <polygon points="2,14 16,14 11,23 7,23" fill="#9B8BF8" opacity="0.92"/>
+          <polygon points="4,26 14,26 9,35" fill="#22D4C8" opacity="0.92"/>
+          <text x="22" y="13" font-family="'JetBrains Mono','Courier New',monospace" font-size="10" font-weight="500" fill="#8892b0" letter-spacing="3">THE</text>
+          <text x="19" y="37" font-family="'DM Serif Display',Georgia,serif" font-style="italic" font-size="26" fill="#e8e6e1">Seam</text>
+        </svg>
+      </a>
+      <p class="footer-copy">&copy; 2026 The Seam &middot; Part of MeshForce &middot; An Aric Civic Labs Project &middot; aricciviclabs.org/meshforce</p>
+    </div>
+    <div class="footer-links">
+      <a href="seam.html">Open Engine</a>
+      <a href="meshforce-index.html">MeshForce</a>
+      <a href="tools.html">Tools</a>
+      <a href="seam-directory.html">Directory</a>
+      <a href="#" onclick="openCM();return false;">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Contact modal -->
+<div id="contact-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+  <div id="contact-modal">
+    <button id="cm-close" onclick="closeCM()" aria-label="Close">&times;</button>
+    <h3 id="cm-title">Get in Touch</h3>
+    <div class="cm-row"><label>Name *</label><input id="cm-name" type="text" placeholder="Your name"></div>
+    <div class="cm-row"><label>Email *</label><input id="cm-email" type="email" placeholder="you@example.com"></div>
+    <div class="cm-row"><label>Message *</label><textarea id="cm-message" placeholder="How can we help?"></textarea></div>
+    <button id="cm-submit" onclick="sendCM()">Send Message</button>
+    <div id="cm-status"></div>
+  </div>
+</div>
+
+<script>
+function openCM(){document.getElementById('contact-modal-overlay').classList.add('open');document.getElementById('cm-name').focus();}
+function closeCM(){document.getElementById('contact-modal-overlay').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeCM();});
+var _cmo=document.getElementById('contact-modal-overlay');if(_cmo)_cmo.addEventListener('click',function(e){if(e.target===this)closeCM();});
+function sendCM(){
+  var name=(document.getElementById('cm-name').value||'').trim();
+  var email=(document.getElementById('cm-email').value||'').trim();
+  var msg=(document.getElementById('cm-message').value||'').trim();
+  var status=document.getElementById('cm-status');
+  if(!name||!email||!msg){status.style.color='#F0514F';status.textContent='Please fill in all fields.';return;}
+  var btn=document.getElementById('cm-submit');
+  btn.disabled=true;btn.textContent='Sending\u2026';status.textContent='';
+  fetch('https://formspree.io/f/mbdbkznw',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:name,email:email,message:msg,_replyto:email,_subject:'Contact from The Seam: '+name})
+  })
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+  .then(function(res){
+    btn.disabled=false;btn.textContent='Send Message';
+    if(res.ok){status.style.color='#2ECC8A';status.textContent='Sent! We\'ll be in touch soon.';
+      setTimeout(function(){closeCM();document.getElementById('cm-name').value='';document.getElementById('cm-email').value='';document.getElementById('cm-message').value='';status.textContent='';},2000);
+    }else{status.style.color='#F0514F';status.textContent='Something went wrong \u2014 email support@aricciviclabs.org directly.';}
+  })
+  .catch(function(){btn.disabled=false;btn.textContent='Send Message';status.style.color='#F0514F';status.textContent='Network error \u2014 email support@aricciviclabs.org directly.';});
+}
+</script>
+</body>
+</html>
