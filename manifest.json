@@ -1,0 +1,39 @@
+{
+  "name": "The Seam",
+  "short_name": "Seam",
+  "description": "Community directory and civic connection platform by ARIC Civic Labs.",
+  "start_url": "/seam.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#08100F",
+  "theme_color": "#22D4C8",
+  "categories": ["social", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "lang": "en-US"
+}
