@@ -206,14 +206,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
   <p>200+ curated listings across contact center and field workforce platforms — AI agents, WFM tools, field service management, capacity planning, research, associations, and training. Two workforce worlds, one directory.</p>
 </div>
 
-<!-- Submit a Listing — jump link at top -->
-<div class="submit-jump-banner">
-  <div class="submit-jump-inner">
-    <span class="submit-jump-text"><strong>Vendor or platform team?</strong> Submit your product for inclusion in the directory.</span>
-    <a href="#submit-listing" class="submit-jump-link">Submit a Listing ↓</a>
-  </div>
-</div>
-
 <!-- Section navigation -->
 <div class="section-nav">
   <span class="section-nav-label">Contact Center:</span>
@@ -233,6 +225,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
   <a href="#fm-associations" class="sec-pill" style="border-color:rgba(34,212,200,0.3);color:#22D4C8">Associations</a>
   <a href="#fm-training" class="sec-pill" style="border-color:rgba(34,212,200,0.3);color:#22D4C8">Training</a>
   <a href="#submit-listing" class="sec-pill submit-pill">Submit a Listing ↓</a>
+  <button class="sort-popular-btn" id="sortPopularBtn" onclick="togglePopularSort()">🔥 Most Popular</button>
 </div>
 
 
@@ -244,7 +237,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
         <div class="popular-bar-title">🔥 Most Visited Listings</div>
         <div class="popular-bar-sub">Ranked by real click-through traffic from this directory</div>
       </div>
-      <button class="sort-popular-btn" id="sortPopularBtn" onclick="togglePopularSort()">Sort by Popular</button>
     </div>
     <div class="popular-list" id="popularList">
       <span class="popular-loading">Loading…</span>
@@ -709,6 +701,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
 </section>
 
 <hr class="section-divider field">
+
+<!-- Submit a Listing — jump link at top -->
+<div class="submit-jump-banner">
+  <div class="submit-jump-inner">
+    <span class="submit-jump-text"><strong>Vendor or platform team?</strong> Submit your product for inclusion in the directory.</span>
+    <a href="#submit-listing" class="submit-jump-link">Submit a Listing ↓</a>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════════════
      FIELD MANAGEMENT WORKFORCE PLANNING
@@ -1240,40 +1240,19 @@ function slugify(str) {
 
 function trackClick(name, url) {
   var key = slugify(name);
-  // Non-blocking — fire and forget
   try {
-    fetch(SUPA_URL + '/rest/v1/directory_clicks', {
+    fetch(SUPA_URL + '/rest/v1/rpc/increment_click', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'apikey': SUPA_ANON,
-        'Authorization': 'Bearer ' + SUPA_ANON,
-        'Prefer': 'resolution=merge-duplicates'
+        'Authorization': 'Bearer ' + SUPA_ANON
       },
-      body: JSON.stringify({
-        listing_key: key,
-        listing_name: name,
-        listing_url: url,
-        page: PAGE_ID,
-        click_count: 1,
-        last_clicked_at: new Date().toISOString()
-      })
-    }).then(function(r) {
-      // If row exists, increment via RPC-style update
-      if (r.status === 409 || r.status === 200 || r.status === 201) {
-        fetch(SUPA_URL + '/rest/v1/rpc/increment_click', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': SUPA_ANON,
-            'Authorization': 'Bearer ' + SUPA_ANON
-          },
-          body: JSON.stringify({ p_key: key, p_page: PAGE_ID })
-        }).catch(function(){});
-      }
-    }).catch(function(){});
+      body: JSON.stringify({ p_key: key, p_name: name, p_url: url, p_page: PAGE_ID })
+    })
+    .then(function(r) { console.log('[MF click]', name, r.status); })
+    .catch(function(e) { console.warn('[MF click error]', e); });
   } catch(e) {}
-
 }
 
 function instrumentLinks() {
