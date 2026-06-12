@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Seam — Intelligence Engine | Aric Civic Labs</title>
-<meta name="description" content="The Seam is a live AI-powered intelligence engine for WFM and ECP professionals. Ask about workforce management research, best practices, AI agent use cases, and industry trends.">
-<meta name="keywords" content="WFM intelligence engine, workforce management research, AI agents workforce, workforce planning AI, enterprise capacity planning research">
+<meta name="description" content="The Seam is a live AI-powered intelligence engine for WFM, ECP, and field management professionals. Ask about workforce management, field operations planning, AI agent use cases, and industry trends.">
+<meta name="keywords" content="WFM intelligence engine, workforce management research, field management planning, field operations AI, AI agents workforce, workforce planning AI, enterprise capacity planning research, field service management">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://theseam.aricciviclabs.org/seam">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,21 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
 
 /* TOPIC BUTTONS */
 .topic-label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--slate);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.65rem}
-.topic-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.topic-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem}
 .topic-btn{background:rgba(17,34,64,0.8);border:1px solid var(--card-border);color:var(--slate-light);padding:0.4rem 1rem;border-radius:20px;font-size:0.8125rem;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
 .topic-btn:hover,.topic-btn.selected{background:rgba(244,165,0,0.12);border-color:rgba(244,165,0,0.45);color:var(--amber)}
+/* Contact center topics — amber tint */
+.topic-btn.cc{border-color:rgba(244,165,0,0.3);color:rgba(244,165,0,0.85)}
+.topic-btn.cc:hover,.topic-btn.cc.selected{background:rgba(244,165,0,0.14);border-color:rgba(244,165,0,0.65);color:var(--amber)}
+/* Field management topics — teal tint */
+.topic-btn.fm{border-color:rgba(34,212,200,0.3);color:rgba(34,212,200,0.85)}
+.topic-btn.fm:hover,.topic-btn.fm.selected{background:rgba(34,212,200,0.1);border-color:rgba(34,212,200,0.6);color:#22D4C8}
+/* Legend */
+.topic-legend{display:flex;gap:1.25rem;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:0.45rem;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:var(--slate)}
+.legend-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.legend-dot.cc{background:rgba(244,165,0,0.75);box-shadow:0 0 5px rgba(244,165,0,0.35)}
+.legend-dot.fm{background:rgba(34,212,200,0.75);box-shadow:0 0 5px rgba(34,212,200,0.35)}
 
 /* QUERY ROW */
 .query-row{display:flex;gap:0.75rem;margin-bottom:1.5rem}
@@ -228,7 +240,7 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
   </div>
   <div class="page-eyebrow">AI-Powered Intelligence Engine</div>
   <h1>The <em>Seam</em></h1>
-  <p>Ask about WFM industry research, best practices, AI agent deployment, capacity planning frameworks, or any workforce management topic. The Seam searches current literature and synthesizes findings for practitioners.</p>
+  <p>Ask about WFM industry research, best practices, AI agent deployment, capacity planning frameworks, field management planning and operations, or any workforce management topic. The Seam searches current literature and synthesizes findings for practitioners.</p>
 </div>
 
 
@@ -241,21 +253,31 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
         <h2>Intelligence Engine</h2>
         <span class="engine-badge">AI POWERED · LIVE</span>
       </div>
-      <p class="engine-desc">Select a suggested topic or type your own query. The Seam searches current industry literature and synthesizes key findings for WFM and ECP practitioners — with citations where available.</p>
+      <p class="engine-desc">Select a suggested topic or type your own query. The Seam searches current industry literature and synthesizes key findings for WFM, ECP, and field management practitioners — with citations where available.</p>
     </div>
     <div class="engine-body">
       <p class="topic-label">Suggested Topics</p>
       <div class="topic-row" id="topicRow">
-        <button class="topic-btn" onclick="selectTopic(this,'AI agents in contact centers 2025')">AI Agents in Contact Centers</button>
-        <button class="topic-btn" onclick="selectTopic(this,'Erlang C staffing methodology best practices')">Erlang C Best Practices</button>
-        <button class="topic-btn" onclick="selectTopic(this,'workforce management AI automation trends 2025')">WFM Automation Trends</button>
-        <button class="topic-btn" onclick="selectTopic(this,'enterprise capacity planning AI integration')">ECP AI Integration</button>
-        <button class="topic-btn" onclick="selectTopic(this,'shrinkage management strategies contact center')">Shrinkage Management</button>
-        <button class="topic-btn" onclick="selectTopic(this,'WFM forecasting accuracy improvement techniques')">Forecast Accuracy</button>
-        <button class="topic-btn" onclick="selectTopic(this,'agent scheduling optimization AI machine learning')">Schedule Optimization</button>
-        <button class="topic-btn" onclick="selectTopic(this,'workforce planning skills gap analysis AI')">Skills Gap & AI</button>
-        <button class="topic-btn" onclick="selectTopic(this,'real-time adherence best practices WFM')">Real-Time Adherence</button>
-        <button class="topic-btn" onclick="selectTopic(this,'omnichannel workforce management contact center 2025')">Omnichannel WFM</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'AI agents in contact centers 2025')">AI Agents in Contact Centers</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'Erlang C staffing methodology best practices')">Erlang C Best Practices</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'workforce management AI automation trends 2025')">WFM Automation Trends</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'enterprise capacity planning AI integration')">ECP AI Integration</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'shrinkage management strategies contact center')">Shrinkage Management</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'WFM forecasting accuracy improvement techniques')">Forecast Accuracy</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'agent scheduling optimization AI machine learning')">Schedule Optimization</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'workforce planning skills gap analysis AI')">Skills Gap & AI</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'real-time adherence best practices WFM')">Real-Time Adherence</button>
+        <button class="topic-btn cc" onclick="selectTopic(this,'omnichannel workforce management contact center 2025')">Omnichannel WFM</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'field service management scheduling optimization AI')">Field Service Scheduling</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'mobile workforce management field operations best practices')">Mobile Workforce Ops</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'field technician dispatch routing optimization AI 2025')">Dispatch & Routing AI</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'predictive maintenance field operations workforce planning')">Predictive Maintenance WFM</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'field service SLA performance metrics workforce KPIs')">Field SLA & KPIs</button>
+        <button class="topic-btn fm" onclick="selectTopic(this,'territory planning and field workforce coverage optimization')">Territory Planning</button>
+      </div>
+      <div class="topic-legend">
+        <div class="legend-item"><span class="legend-dot cc"></span>CONTACT CENTER / WFM</div>
+        <div class="legend-item"><span class="legend-dot fm"></span>FIELD MANAGEMENT OPS</div>
       </div>
       <div id="seamUnlockBanner" class="unlock-banner" style="display:none">✓ Practitioner access unlocked — unlimited searches this session.</div>
       <div id="seamTurnCounter" class="seam-turn-counter">
@@ -263,11 +285,11 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
         <span id="turnCounterLabel">3 free searches remaining</span>
       </div>
       <div class="query-row">
-        <input class="query-input" id="queryInput" type="text" placeholder="e.g. 'What are the latest WFM AI agent deployment patterns in healthcare?'" />
+        <input class="query-input" id="queryInput" type="text" placeholder="e.g. 'What are the latest AI dispatch optimization patterns for field service operations?'" />
         <button class="search-btn" id="searchBtn" onclick="runSeamSearch()">Search →</button>
       </div>
       <div class="results-area" id="resultsArea">
-        <p class="results-placeholder">Select a topic above or enter your own query.<br><strong>The Seam will search current industry literature and synthesize key findings for WFM and ECP practitioners.</strong></p>
+        <p class="results-placeholder">Select a topic above or enter your own query.<br><strong>The Seam will search current industry literature and synthesize key findings for WFM, ECP, and field management practitioners.</strong></p>
       </div>
       <div class="export-row" id="exportRow" style="display:none">
         <button class="export-btn" onclick="handleExportBriefing()"><span id="exportLockIcon">🔒</span> Export Briefing PDF</button>
@@ -282,12 +304,13 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
   <div class="about-grid">
     <div class="about-card">
       <h3>What The Seam Does</h3>
-      <p>The Seam is a live intelligence engine that searches current WFM and ECP industry literature, then synthesizes findings into structured, practitioner-ready summaries.</p>
+      <p>The Seam is a live intelligence engine that searches current WFM, ECP, and field management industry literature, then synthesizes findings into structured, practitioner-ready summaries.</p>
       <ul>
         <li>Searches current research papers and vendor publications</li>
         <li>Synthesizes findings from multiple sources</li>
         <li>Surfaces actionable insights and best practices</li>
         <li>Returns structured results with source attribution</li>
+        <li>Covers WFM, ECP, and field management planning and operations</li>
         <li>Falls back to deep training knowledge when live search is unavailable</li>
       </ul>
     </div>
@@ -297,10 +320,13 @@ footer{position:relative;z-index:1;border-top:1px solid var(--rule);padding:2.5r
       <ul>
         <li>Researching new WFM or AI agent platforms before evaluation</li>
         <li>Staying current on AI automation trends in workforce ops</li>
-        <li>Building business cases for WFM investment</li>
+        <li>Building business cases for WFM or field ops investment</li>
         <li>Preparing for vendor conversations with current context</li>
         <li>Understanding academic and consulting research on WFM topics</li>
         <li>Benchmarking against industry best practices</li>
+        <li>Optimizing field technician dispatch routing and scheduling</li>
+        <li>Improving field SLA performance and territory coverage</li>
+        <li>Researching predictive maintenance and mobile workforce strategies</li>
       </ul>
     </div>
   </div>
@@ -624,13 +650,13 @@ function runSeamSearch() {
   btn.textContent = 'Searching…';
   area.innerHTML = '<div class="loading-state"><div style="margin-bottom:1rem;font-size:0.875rem">The Seam is searching industry literature…</div><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div>';
 
-  var SYS = 'You are The Seam, an AI intelligence engine for workforce management (WFM) and enterprise capacity planning (ECP) professionals. Synthesize authoritative, current information on workforce management topics.\n\nReturn ONLY a JSON array (no markdown, no preamble, no backticks) with this exact structure:\n[\n  {\n    "source": "SOURCE NAME",\n    "domain": "https://www.sourcehomepage.com",\n    "date": "Month Year or Year",\n    "tag": "CATEGORY",\n    "title": "Descriptive Title of Finding",\n    "summary": "2-3 sentence practical summary for WFM/ECP practitioners with specific data or recommendations where available."\n  }\n]\n\nCRITICAL: Return EXACTLY 3 items — no more. Keep each summary under 60 words. This prevents JSON truncation.\n\nDOMAIN RULES: The "domain" field must be the homepage or known section URL of the publisher (e.g. "https://www.mckinsey.com/featured-insights/future-of-work", "https://hbr.org", "https://www.shrm.org"). Do NOT invent article URLs. Do NOT include specific article paths. Only include a domain you are certain exists. If unsure, omit the domain field entirely.\n\nCategories: Research, Industry Trend, Best Practice, Tool Update, Vendor News, Case Study, Framework, Academic.';
+  var SYS = 'You are The Seam, an AI intelligence engine for workforce management (WFM), enterprise capacity planning (ECP), and field management planning and operations professionals. Synthesize authoritative, current information on workforce management topics, including field service management, mobile workforce operations, dispatch and routing, field technician scheduling, territory planning, and field SLA performance.\n\nReturn ONLY a JSON array (no markdown, no preamble, no backticks) with this exact structure:\n[\n  {\n    "source": "SOURCE NAME",\n    "domain": "https://www.sourcehomepage.com",\n    "date": "Month Year or Year",\n    "tag": "CATEGORY",\n    "title": "Descriptive Title of Finding",\n    "summary": "2-3 sentence practical summary for WFM/ECP/field management practitioners with specific data or recommendations where available."\n  }\n]\n\nCRITICAL: Return EXACTLY 3 items — no more. Keep each summary under 60 words. This prevents JSON truncation.\n\nDOMAIN RULES: The "domain" field must be the homepage or known section URL of the publisher (e.g. "https://www.mckinsey.com/featured-insights/future-of-work", "https://hbr.org", "https://www.shrm.org"). Do NOT invent article URLs. Do NOT include specific article paths. Only include a domain you are certain exists. If unsure, omit the domain field entirely.\n\nCategories: Research, Industry Trend, Best Practice, Tool Update, Vendor News, Case Study, Framework, Academic, Field Operations.';
 
   var basePayload = { model: 'claude-sonnet-4-20250514', max_tokens: 1500, system: SYS };
 
   // Pass 1 — with web search
   apiCall(Object.assign({}, basePayload, {
-    messages: [{ role: 'user', content: 'Synthesize 3 current findings on this WFM/ECP topic. For each result include the publisher domain homepage (not a specific article URL). Topic: ' + query }]
+    messages: [{ role: 'user', content: 'Synthesize 3 current findings on this WFM/ECP/field management topic. For each result include the publisher domain homepage (not a specific article URL). Topic: ' + query }]
   }), true)
   .then(function(d1) {
     var txt1 = (d1.content || []).map(function(b){ return b.type === 'text' ? b.text : ''; }).join('');
@@ -643,7 +669,7 @@ function runSeamSearch() {
   .catch(function() {
     // Pass 2 — training knowledge only
     apiCall(Object.assign({}, basePayload, {
-      messages: [{ role: 'user', content: 'Synthesize 3-5 findings on this WFM/ECP topic using your training knowledge of industry research, best practices, and the vendor landscape: ' + query }]
+      messages: [{ role: 'user', content: 'Synthesize 3-5 findings on this WFM/ECP/field management topic using your training knowledge of industry research, best practices, and the vendor landscape: ' + query }]
     }), false)
     .then(function(d2) {
       var txt2 = (d2.content || []).map(function(b){ return b.type === 'text' ? b.text : ''; }).join('');
