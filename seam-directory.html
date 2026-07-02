@@ -106,6 +106,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{color:var(--slate);text-decoration:none;font-size:0.8125rem;transition:color 0.2s}
 .footer-links a:hover{color:var(--white)}
+.acl-suite-footer{position:relative;z-index:1;border-top:1px solid var(--rule);background:rgba(17,34,64,0.35);padding:2.5rem 2rem 2rem}
+.acl-suite-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem}
+.acl-suite-col{display:flex;flex-direction:column;gap:0.45rem}
+.acl-suite-label{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin-bottom:0.25rem}
+.acl-suite-col a{color:var(--slate-light);text-decoration:none;font-size:0.8125rem;transition:color 0.2s}
+.acl-suite-col a:hover{color:var(--amber)}
+.acl-suite-here{color:var(--green);font-size:0.8125rem;font-weight:500}
+.acl-suite-meta{max-width:1200px;margin:1.75rem auto 0;padding-top:1.25rem;border-top:1px solid var(--card-border);display:flex;align-items:center;flex-wrap:wrap;gap:0.5rem;font-size:0.75rem;color:var(--slate)}
+.acl-suite-meta a{color:var(--slate);text-decoration:none}
+.acl-suite-meta a:hover{color:var(--amber)}
+.acl-m-dot{color:var(--card-border)}
+@media(max-width:720px){.acl-suite-grid{grid-template-columns:repeat(2,1fr)}}
 
 @media(max-width:768px){
   .nav-ecosystem{display:none}
@@ -170,7 +182,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
 <body>
 <!-- ── Privacy notice bar ── -->
 <div id="rcp-notice">
-  <span>By using this tool you agree to our <a href="legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are self-reported estimates only &mdash; not professional, legal, or financial advice.</span>
+  <span>By using this tool you agree to our <a href="https://aricciviclabs.org/legal.html" target="_blank">Privacy &amp; Terms</a>. All outputs are self-reported estimates only &mdash; not professional, legal, or financial advice.</span>
   <button id="rcp-notice-close" aria-label="Dismiss" onclick="this.parentElement.style.display='none';try{sessionStorage.setItem('rcpNotice','1')}catch(e){}">&#x2715;</button>
 </div>
 <script>try{if(sessionStorage.getItem('rcpNotice')==='1'){var n=document.getElementById('rcp-notice');if(n)n.style.display='none';}}catch(e){}</script>
@@ -1208,6 +1220,42 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,22,40,0.95);backdrop-fi
     <p class="form-note">Submissions are reviewed by the MeshForce editorial team within 5 business days. Sponsored placements are clearly labeled. Questions? <a href="mailto:support@aricciviclabs.org" style="color:var(--amber)">support@aricciviclabs.org</a></p>
   </div>
 </section>
+
+<div class="acl-suite-footer">
+  <div class="acl-suite-grid">
+    <div class="acl-suite-col">
+      <div class="acl-suite-label">Work-Life Enablement</div>
+      <a href="https://receipts.aricciviclabs.org">receipts.</a>
+      <a href="https://transitions.aricciviclabs.org">Transitions</a>
+    </div>
+    <div class="acl-suite-col">
+      <div class="acl-suite-label">Social Enablement</div>
+      <a href="https://inable.aricciviclabs.org">InAble</a>
+    </div>
+    <div class="acl-suite-col">
+      <div class="acl-suite-label">Workforce Management</div>
+      <a href="https://meshforce.aricciviclabs.org">MeshForce</a>
+      <a href="https://theseam.aricciviclabs.org/seam.html">The Seam</a>
+    </div>
+    <div class="acl-suite-col">
+      <div class="acl-suite-label">Civic &amp; Rights · Free</div>
+      <a href="https://civic.aricciviclabs.org/">Civics</a>
+      <a href="https://civic.aricciviclabs.org/rights_connector.html">Find an Organization</a>
+      <a href="https://civic.aricciviclabs.org/rights_connector_constitution.html">The Constitution</a>
+      <a href="https://civic.aricciviclabs.org/rights_connector_communities.html">Communities</a>
+      <a href="https://civic.aricciviclabs.org/rights_connector_reps.html">Representatives</a>
+      <a href="https://civic.aricciviclabs.org/epilepsy_resources.html">Epilepsy Resources</a>
+    </div>
+  </div>
+  <div class="acl-suite-meta">
+    <a href="https://aricciviclabs.org">AricCivicLabs.Org</a>
+    <span class="acl-m-dot">·</span>
+    <a href="https://aricciviclabs.org/legal.html">Privacy &amp; Terms</a>
+    <span class="acl-m-dot">·</span>
+    <span>© 2026 AricCivicLabs.Org</span>
+  </div>
+</div>
+<!-- /ACL Suite Footer -->
 
 <footer>
   <div class="footer-inner">
